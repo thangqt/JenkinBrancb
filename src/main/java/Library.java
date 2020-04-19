@@ -6,6 +6,7 @@
  */
 public class Library {
     public boolean someLibraryMethod() {
+      System.out.println("Mutil Branch");
         return true;
     }
 }
