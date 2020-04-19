@@ -1,13 +1,13 @@
 pipeline {
    agent {
         docker {
-            image 'gradle:6.3.0-jdk8'
-            args '-u root'
+            image 'gradle:4.5-jdk8-alpine'
         }
     }
    stages {
       stage('Build') {
          steps {
+            sh 'gradle clean build'
             sh 'gradle clean build'
             junit '**/target/surefire-reports/TEST-*.xml'
          }
